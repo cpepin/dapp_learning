@@ -20,7 +20,7 @@ contract Voting {
     votesRecieved[candidate] += 1;
   }
 
-  function validateCandidate(bytes32 candidate) {
+  function validateCandidate(bytes32 candidate) returns (bool) {
     for (uint i = 0; i < candidateList.length; i++) {
       if (candidateList[i] == candidate) {
         return true;
